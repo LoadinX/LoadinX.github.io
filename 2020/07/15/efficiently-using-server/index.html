@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="EFFICIENTLY USING SERVERLOADIN common usage(workflow) for working in server   EFFICIENTLY USING SERVER Linux server login from windows from linux logined state   Linux Common Usage windows-like comman">
+<meta property="og:type" content="article">
+<meta property="og:title" content="efficiently-using-server">
+<meta property="og:url" content="http://yoursite.com/2020/07/15/efficiently-using-server/index.html">
+<meta property="og:site_name" content="Loadin talks a lot">
+<meta property="og:description" content="EFFICIENTLY USING SERVERLOADIN common usage(workflow) for working in server   EFFICIENTLY USING SERVER Linux server login from windows from linux logined state   Linux Common Usage windows-like comman">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xshell-connection.jpg">
+<meta property="og:image" content="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xshell-validation.jpg">
+<meta property="og:image" content="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xshell-directssh.jpg">
+<meta property="og:image" content="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xftp-open.jpg">
+<meta property="article:published_time" content="2020-07-14T17:25:14.000Z">
+<meta property="article:modified_time" content="2020-07-15T04:30:42.844Z">
+<meta property="article:author" content="Loadin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xshell-connection.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/15/efficiently-using-server/"/>
+
+
+
+
+
+  <title>efficiently-using-server | Loadin talks a lot</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Loadin talks a lot</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/15/efficiently-using-server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Loadin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Loadin talks a lot">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">efficiently-using-server</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-15T01:25:14+08:00">
+                2020-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tutorial/" itemprop="url" rel="index">
+                    <span itemprop="name">tutorial</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="EFFICIENTLY-USING-SERVER"><a href="#EFFICIENTLY-USING-SERVER" class="headerlink" title="EFFICIENTLY USING SERVER"></a>EFFICIENTLY USING SERVER</h1><p><em>LOADIN</em></p>
+<p><em>common usage(workflow) for working in server</em></p>
+<hr>
+<ul>
+<li><a href="#efficiently-using-server">EFFICIENTLY USING SERVER</a><ul>
+<li><a href="#linux-server-login">Linux server login</a><ul>
+<li><a href="#from-windows">from windows</a></li>
+<li><a href="#from-linux">from linux</a></li>
+<li><a href="#logined-state">logined state</a></li>
+</ul>
+</li>
+<li><a href="#linux-common-usage">Linux Common Usage</a><ul>
+<li><a href="#windows-like">windows-like</a></li>
+<li><a href="#command-line">command line</a><ul>
+<li><a href="#dir">dir</a></li>
+<li><a href="#transfile">transfile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#run-scripts">Run scripts</a><ul>
+<li><a href="#basic">basic</a></li>
+<li><a href="#advanced">advanced</a></li>
+<li><a href="#check-state">check state</a></li>
+<li><a href="#halfway-shutdown">halfway shutdown</a></li>
+</ul>
+</li>
+<li><a href="#extra">Extra</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Linux-server-login"><a href="#Linux-server-login" class="headerlink" title="Linux server login"></a>Linux server login</h2><h3 id="from-windows"><a href="#from-windows" class="headerlink" title="from windows"></a>from windows</h3><p>software: XHELL</p>
+<p>File&gt;Open&gt;New Session –&gt; </p>
+<p><img src="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xshell-connection.jpg" alt="Fill location here" title="XSHELL_NewSession_Connection"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- local connect &#x3D;&#x3D; pc,server under the same network</span><br><span class="line">   - HOST: 10.0.0.3</span><br><span class="line">   - PORT: 22</span><br><span class="line">- remote connect &#x3D;&#x3D; pc at home visits server at school</span><br><span class="line">   - HOST: **.**.**.***</span><br><span class="line">   - PORT: 322</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xshell-validation.jpg" alt="Fill identification here" title="XSHELL_NewSession_Validation"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- USRNAME: As given</span><br><span class="line">- PASSWORD: As given</span><br></pre></td></tr></table></figure>
+
+<h3 id="from-linux"><a href="#from-linux" class="headerlink" title="from linux"></a>from linux</h3><p>command usage: ssh user@hostname:port</p>
+<p>Fill in what popen window asked to do as follow.</p>
+<p><img src="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xshell-directssh.jpg" alt="workflow of ssh from remote" title="XSHELL_direct_ssh_remotely"></p>
+<h3 id="logined-state"><a href="#logined-state" class="headerlink" title="logined state"></a>logined state</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Type &#96;help&#39; to learn how to use Xshell prompt.</span><br><span class="line">[C:\~]$ ssh sshen@**.**.**.***:322</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Connecting to **.**.**.***:322...</span><br><span class="line">Connection established.</span><br><span class="line">To escape to local shell, press &#39;Ctrl+Alt+]&#39;.</span><br><span class="line"></span><br><span class="line">Last login: Mon Jan  6 20:53:17 2020 from 10.0.0.133</span><br><span class="line">[sshen@node0 ~]</span><br></pre></td></tr></table></figure>
+<p><strong><em>[sshen@node0 ~]</em></strong> means you can command in server now.</p>
+<hr>
+<h2 id="Linux-Common-Usage"><a href="#Linux-Common-Usage" class="headerlink" title="Linux Common Usage"></a>Linux Common Usage</h2><h3 id="windows-like"><a href="#windows-like" class="headerlink" title="windows-like"></a>windows-like</h3><p><strong>you can manuplate just like windows in Ctrl+Alt_F mode</strong></p>
+<p><img src="https://github.com/LoadinX/tutorial_for_server_using/blob/master/image/xftp-open.jpg" alt="same practice" title="XFTP_open"></p>
+<h3 id="command-line"><a href="#command-line" class="headerlink" title="command line"></a>command line</h3><h4 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#create new dir</span><br><span class="line">mkdir dir_name</span><br><span class="line"></span><br><span class="line">#change dir</span><br><span class="line">cd dir_name</span><br><span class="line"></span><br><span class="line">#remove dir</span><br><span class="line">rm -rf dir_name</span><br></pre></td></tr></table></figure>
+<p>Caution: <em>be careful,</em> <strong><em>-rf</em></strong> <em>means</em> <strong>forcely</strong> <em>remove</em> <strong>complete</strong> <em>dir</em> <strong>without confirm</strong></p>
+<h4 id="transfile"><a href="#transfile" class="headerlink" title="transfile"></a>transfile</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># upload file</span><br><span class="line">rz</span><br><span class="line"></span><br><span class="line"># download file</span><br><span class="line">sz filename</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/LoadinX/tutorial_for_server_using/blob/master/practice/common_usage.txt" target="_blank" rel="noopener">let’s try now</a></p>
+<hr>
+<h2 id="Run-scripts"><a href="#Run-scripts" class="headerlink" title="Run scripts"></a>Run scripts</h2><p>Complete programming on pc,upload scripts(bash,python,etc,here specificlly refer to python script) to server and cd to your script’s dir.</p>
+<h3 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h3><p>Just like run python scripts in windows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[sshen@node0 ~]python script_name.py</span><br></pre></td></tr></table></figure>
+
+<h3 id="advanced"><a href="#advanced" class="headerlink" title="advanced"></a>advanced</h3><p><a href="https://v2ex.com/t/628260" target="_blank" rel="noopener">nohup</a> is a command for hanging up programmes.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 1 output info when running your script to script_name.log file</span><br><span class="line"># 2 keep python alive even connection shut down</span><br><span class="line">[sshen@node0 ~]nohup python -u script_name.py &gt; script_name.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="check-state"><a href="#check-state" class="headerlink" title="check state"></a>check state</h3><p>After nohup hanging up the runing, we shell check whether our jobs still working.</p>
+<ul>
+<li>Same session: jobs<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[sshen@node0 ~]jobs</span><br></pre></td></tr></table></figure></li>
+<li>New session: ps -aux | grep keyword(like your username/python)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[sshen@node0 ~]ps -aux|grep sshen</span><br><span class="line"># or</span><br><span class="line">[sshen@node0 ~]ps -aux|grep python</span><br></pre></td></tr></table></figure>
+<h3 id="halfway-shutdown"><a href="#halfway-shutdown" class="headerlink" title="halfway shutdown"></a>halfway shutdown</h3>When it comes to infinite loops or willing to stop programme,find its pid and kill.<br>Simply use pkill.(DO not in root)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[sshen@node0 ~]pkill python</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><a href="https://github.com/LoadinX/tutorial_for_server_using/blob/master/practice/run_script.txt" target="_blank" rel="noopener">let’s try now</a></p>
+<hr>
+<h2 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a>Extra</h2><ul>
+<li>top<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># top checks what is runing in this node</span><br><span class="line">[sshen@node0 ~]top</span><br></pre></td></tr></table></figure></li>
+<li>cpu<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># specific in LMMD server, to check status of each node</span><br><span class="line">[sshen@node0 ~]cpu</span><br></pre></td></tr></table></figure></li>
+<li><strong>change node</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># cpu command to check which node is free to use</span><br><span class="line">## one RTX2080Ti is attached to node21</span><br><span class="line">[sshen@node0 ~]ssh node21 -X</span><br></pre></td></tr></table></figure></li>
+<li>simply checking gpu<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[sshen@node0 ~]nvidia-smi</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/15/1%E6%97%A0%E8%AF%9D%E5%8F%AF%E8%AF%B4%E4%B8%8E%E6%97%A0%E8%AF%9D%E5%8F%AF%E8%AF%B4/" rel="next" title="1无话可说与无话可说">
+                <i class="fa fa-chevron-left"></i> 1无话可说与无话可说
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/15/2%E5%BD%93%E4%BD%A0%E8%BF%B7%E6%83%98%E6%97%B6%E4%BC%9A%E5%8E%BB%E6%A3%80%E6%9F%A5%E8%87%AA%E5%B7%B1%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%83%E7%90%86%E7%96%BE%E7%97%85%E5%90%97/" rel="prev" title="emotion-type">
+                emotion-type <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Loadin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#EFFICIENTLY-USING-SERVER"><span class="nav-number">1.</span> <span class="nav-text">EFFICIENTLY USING SERVER</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-server-login"><span class="nav-number">1.1.</span> <span class="nav-text">Linux server login</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#from-windows"><span class="nav-number">1.1.1.</span> <span class="nav-text">from windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from-linux"><span class="nav-number">1.1.2.</span> <span class="nav-text">from linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logined-state"><span class="nav-number">1.1.3.</span> <span class="nav-text">logined state</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-Common-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">Linux Common Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows-like"><span class="nav-number">1.2.1.</span> <span class="nav-text">windows-like</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#command-line"><span class="nav-number">1.2.2.</span> <span class="nav-text">command line</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dir"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">dir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transfile"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">transfile</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Run-scripts"><span class="nav-number">1.3.</span> <span class="nav-text">Run scripts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic"><span class="nav-number">1.3.1.</span> <span class="nav-text">basic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#advanced"><span class="nav-number">1.3.2.</span> <span class="nav-text">advanced</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#check-state"><span class="nav-number">1.3.3.</span> <span class="nav-text">check state</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#halfway-shutdown"><span class="nav-number">1.3.4.</span> <span class="nav-text">halfway shutdown</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extra"><span class="nav-number">1.4.</span> <span class="nav-text">Extra</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Loadin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
